@@ -157,7 +157,7 @@ Function Prototype:
   * Assumes that there are exactly `52` elements in the doubly-linked list.
   * Orders the deck from spades to diamonds and from aces to kings.
 
-## Contributors:
+## Contributors
 1. [Duncan Ngugi](https://github.com/ngugimuchangi)
 2. [Dennis Kinyua](https://github.com/denkin14)
 
