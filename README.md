@@ -1,9 +1,3 @@
-# Sorting Algorithms 
-
-## Contributors:
-1. [Duncan Ngugi](https://github.com/ngugimuchangi)
-2. [Dennis Kinyua](https://github.com/denkin14)
-
 # C - Sorting algorithms & Big O
 
 In this project, we implemented several different sorting algorithms.
@@ -162,3 +156,8 @@ Function Prototype:
   * [1000-sort_deck.c](./1000-sort_deck.c): C function that sorts a `deck_node_t` doubly-linked list deck of cards.
   * Assumes that there are exactly `52` elements in the doubly-linked list.
   * Orders the deck from spades to diamonds and from aces to kings.
+
+## Contributors:
+1. [Duncan Ngugi](https://github.com/ngugimuchangi)
+2. [Dennis Kinyua](https://github.com/denkin14)
+
