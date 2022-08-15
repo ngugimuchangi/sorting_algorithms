@@ -1,75 +1,72 @@
 #include "sort.h"
 
 /**
- * quick_sort - function that sorts an array of integers
- * @array: array to sort
- * @size: size of the array
- *
- * Description: sorts an array of integers in asceding order
- * using quick sort algorithm
- *
- * Return: nothing
+ * partition_array - partitions an array
+ * @array: array of integers
+ * @low: the lowest position of array
+ * @high: highest position of the array to be partitioned
+ * @size: length of the main array
+ * Return: new pivot index
  */
-
-void quick_sort(int *array, size_t size)
+int partition_array(int *array, int low, int high, size_t size)
 {
-	if (size > 1)
-		quicksort(array, 0, size - 1, size);
+	int i = (low - 1);
+	int pivot = array[high];
+	int j, tmp;
+
+	for (j = low; j < high; j++)
+	{
+		if (array[j] < pivot)
+		{
+			i++;
+			tmp = array[j];
+			array[j] = array[i];
+			array[i] = tmp;
+			if (i != j)
+				print_array(array, size);
+		}
+	}
+
+	if (array[i + 1] != array[high])
+	{
+		tmp = array[i + 1];
+		array[i + 1] = array[high];
+		array[high] = tmp;
+		if ((i + 1) != j)
+			print_array(array, size);
+	}
+
+	return (i + 1);
 }
 
 /**
- * quicksort - implementation of quicksort algorithm
- * @array: array to sort
- * @start: start of array
- * @end: end of array
- * @size: size of array
- *
- * Return: nothing
+ * quicksort - sorts an array recursively using quicksort
+ * @array: array of integers
+ * @low: the lowest position of array
+ * @high: highest position of the array to be partitioned
+ * @size: length of the main array
+ * Returns: nothing
  */
-void quicksort(int *array, int start, int end, size_t size)
+void quicksort(int *array, int low, int high, size_t size)
 {
-	int index;
+	int pivot = 0;
 
-	if (start < end)
+	if (low < high)
 	{
-		index = partition_array(array, start, end, size);
-		quicksort(array, start, index - 1, size);
-		quicksort(array, index + 1, end, size);
+		pivot = partition_array(array, low, high, size);
+		quicksort(array, low, pivot - 1, size);
+		quicksort(array, (pivot + 1), high, size);
 	}
 }
 
 /**
- * partition_array - function that divides array into two
- * @array: array to partition
- * @start: starting point of the array
- * @end: end point of the array
- * @size: size of array
- *
- * Decription: divides array into two parts using Lomuto
- * partition scheme i.e. using the last element as the pivot
- *
- * Return: index of the pivot
+ * quick_sort - base of the quicksort algorithm that
+ * initializes it's implementaion
+ * @array: array of integers
+ * @size: length of the main array
  */
-int partition_array(int *array, int start, int end, size_t size)
+void quick_sort(int *array, size_t size)
 {
-	int temp_int, index, i;
-
-	for (i = start, index = start; i < end; i++)
-		if (array[i] <= array[end])
-		{
-			temp_int = array[i];
-			array[i] = array[index];
-			array[index] = temp_int;
-			index++;
-			print_array(array, size);
-		}
-
-	temp_int = array[end];
-	array[end] = array[index];
-	array[index] = temp_int;
-
-	if (start == end)
-		print_array(array, size);
-
-	return (index);
+	if (array || size > 1)
+		quicksort(array, 0, (size - 1), size);
 }
