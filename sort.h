@@ -42,4 +42,7 @@ int partition_array(int *array, int start, int end, size_t size);
 /* shell sort - knuth sequence */
 void shell_sort(int *array, size_t size);
 
+/* Cocktail shaker sort */
+void cocktail_sort_list(listint_t **list);
+
 #endif /* SORT_H */
