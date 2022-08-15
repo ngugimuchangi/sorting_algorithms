@@ -3,9 +3,9 @@
 /**
  * partition_array - partitions an array
  * @array: array of integers
- * @low: the lowest position of array
- * @high: highest position of the array to be partitioned
- * @size: length of the main array
+ * @low: lowest position of array
+ * @high: highest position of array beinge partitioned
+ * @size: length of the array
  * Return: new pivot index
  */
 int partition_array(int *array, int low, int high, size_t size)
