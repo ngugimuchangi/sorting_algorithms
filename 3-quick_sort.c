@@ -10,7 +10,6 @@
  *
  * Return: nothing
  */
-
 void quick_sort(int *array, size_t size)
 {
 	if (array && size > 1)
@@ -64,12 +63,10 @@ int partition_array(int *array, int start, int end, size_t size)
 			if (index < i)
 				print_array(array, size);
 		}
-
 	index++;
 	array[end] = array[index];
 	array[index] = pivot;
 	if (index < end)
 		print_array(array, size);
-
 	return (index);
 }
