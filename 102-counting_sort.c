@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * get_max - Get maximum value in an array of integers.
+ * get_max - Get maximum value in array of integers.
  * @array: array of integers.
  * @size: The size of array.
  *
