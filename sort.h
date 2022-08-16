@@ -47,4 +47,7 @@ int partition_array_hoare(int *array, int start, int end, size_t size);
 /* shell sort - knuth sequence */
 void shell_sort(int *array, size_t size);
 
+/* counting sort */
+void counting_sort(int *array, size_t size);
+
 #endif /* SORT_H */
