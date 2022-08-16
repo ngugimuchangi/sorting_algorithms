@@ -29,11 +29,11 @@ void quicksort_hoare(int *array, int start, int end, size_t size)
 {
 	int index;
 
-	if (start < end)
+	if (start >= 0 && end >= 0 && start < end)
 	{
 		index = partition_array_hoare(array, start, end, size);
 		quicksort_hoare(array, start, index - 1, size);
-		quicksort_hoare(array, index + 1, end, size);
+		quicksort_hoare(array, index, end, size);
 	}
 }
 
@@ -51,25 +51,24 @@ void quicksort_hoare(int *array, int start, int end, size_t size)
  */
 int partition_array_hoare(int *array, int start, int end, size_t size)
 {
-	int i = start, j = end, temp_int;
+	int i = start - 1, j = end + 1, temp_int, pivot = array[end];
 
-	while (i < j)
+	while (1)
 	{
-		while (array[i] < array[j] && i < j)
+		do
 			i++;
-		temp_int = array[i];
-		array[i] = array[j];
-		array[j] = temp_int;
-		if (i < j)
-			print_array(array, size);
+		while (array[i] < pivot);
 
-		while (array[i] < array[j] && i < j)
+		do
 			j--;
+		while (array[j] > pivot);
+
+		if (i >= j)
+			return (i);
 		temp_int = array[i];
 		array[i] = array[j];
 		array[j] = temp_int;
-		if (i < j)
-			print_array(array, size);
+		print_array(array, size);
 	}
-	return (j);
+	return (-1);
 }
