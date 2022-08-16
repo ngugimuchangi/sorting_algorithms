@@ -50,4 +50,7 @@ void shell_sort(int *array, size_t size);
 /* counting sort */
 void counting_sort(int *array, size_t size);
 
+/* merge sort */
+void counting_sort(int *array, size_t size);
+
 #endif /* SORT_H */
