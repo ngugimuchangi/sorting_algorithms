@@ -34,10 +34,15 @@ listint_t *swap_node);
 /* Selection sort */
 void selection_sort(int *array, size_t size);
 
-/* Quicksort algorithm methods */
+/* Quicksort algorithm methods: Lomuto partition scheme*/
 void quick_sort(int *array, size_t size);
 void quicksort(int *array, int start, int end, size_t size);
 int partition_array(int *array, int start, int end, size_t size);
+
+/* Quicksort algorithm methods: Hoare's partition scheme*/
+void quick_sort_hoare(int *array, size_t size);
+void quicksort_hoare(int *array, int start, int end, size_t size);
+int partition_array_hoare(int *array, int start, int end, size_t size);
 
 /* shell sort - knuth sequence */
 void shell_sort(int *array, size_t size);
