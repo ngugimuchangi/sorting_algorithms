@@ -65,4 +65,18 @@ void merge_sort_recursive(int *subarr, int *buff, size_t front, size_t back)
  *
  * Description: Implements the top-down merge sort algorithm.
  */
+void merge_sort(int *array, size_t size)
+{
+	int *buff;
 
+	if (array == NULL || size < 2)
+		return;
+
+	buff = malloc(sizeof(int) * size);
+	if (buff == NULL)
+		return;
+
+	merge_sort_recursive(array, buff, 0, size);
+
+	free(buff);
+}
