@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
- * get_max - Get the maximum value in an array of integers.
- * @array: An array of integers.
- * @size: The size of the array.
+ * get_max - Get maximum value in an array of integers.
+ * @array: array of integers.
+ * @size: The size of array.
  *
  * Return: The maximum integer in the array.
  */
@@ -23,8 +23,8 @@ int get_max(int *array, int size)
 /**
  * counting_sort - Sort an array of integers in ascending order
  *                 using the counting sort algorithm.
- * @array: An array of integers.
- * @size: The size of the array.
+ * @array: array of integers.
+ * @size: The size of array.
  *
  * Description: Prints the counting array after setting it up.
  */
