@@ -53,7 +53,7 @@ int partition_array_hoare(int *array, int start, int end, size_t size)
 {
 	int i = start - 1, j = end, temp_int, pivot = array[end];
 
-	while (i <= j)
+	while (i < j)
 	{
 		do
 			i++;
