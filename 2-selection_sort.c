@@ -5,7 +5,7 @@
  * @array: array to sort
  * @size: size of array
  *
- * Description: sorts an array of integers in ascedning order
+ * Description: sorts an array of integers in ascending order
  * using selection sort algorithm
  *
  * Return: nothing
