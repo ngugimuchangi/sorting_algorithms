@@ -69,12 +69,13 @@ void swap_nodes_backwards(listint_t **list, listint_t *prev,
  */
 void cocktail_sort_list(listint_t **list)
 {
-	listint_t *temp = *list;
+	listint_t *temp;
 	int flag = 1;
 
 	if (!list || !(*list))
 		return;
 
+	temp = *list;
 	while (flag == 1)
 	{
 		flag = 0;
