@@ -56,4 +56,7 @@ void counting_sort(int *array, size_t size);
 /* merge sort */
 void merge_sort(int *array, size_t size);
 
+/** heap sort */
+void heap_sort(int *array, size_t size);
+
 #endif /* SORT_H */
