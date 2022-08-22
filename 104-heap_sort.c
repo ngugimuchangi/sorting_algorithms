@@ -83,6 +83,7 @@ void heap_sort(int *array, size_t size)
 		while (i > 0)
 		{
 			swap_ints(array, 0, i);
+			print_array(array, (int) size);
 			i--;
 			sift_down(array, 0, i, size);
 		}
