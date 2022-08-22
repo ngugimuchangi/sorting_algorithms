@@ -75,7 +75,7 @@ void heap_sort(int *array, size_t size)
 {
 	int i;
 
-	if (array && size >= 2)
+	if (array && size > 1)
 	{
 		heapify(array, (int) size);
 
