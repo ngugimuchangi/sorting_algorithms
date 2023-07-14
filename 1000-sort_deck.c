@@ -26,7 +26,7 @@ int get_card_value(const card_t *card)
 		card_value += 13;
 		break;
 	case '1':
-		card_value += (int)card->value[0] * 10 + (int)card->value[1] - 96;
+		card_value += 10;
 		break;
 	default:
 		card_value += (int)card->value[0] - 48;
