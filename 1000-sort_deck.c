@@ -1,6 +1,42 @@
 #include <stdlib.h>
 #include "deck.h"
 
+
+int get_card_value(const card_t *card);
+int compare(deck_node_t *node_one, deck_node_t *node_two);
+void swap_nodes(deck_node_t **head, deck_node_t *node_one, deck_node_t *node_two);
+
+
+/**
+ * sort_deck - sort a deck of cards
+ * Used insertion sort algorithm
+ *
+ * @deck: head of the doubly linked list of cards to sort
+ * Return: nothing
+ */
+void sort_deck(deck_node_t **deck)
+{
+	deck_node_t *deck_tracker, *deck_back_tracker, *current_node, *temp;
+
+	if (!(*deck))
+		return;
+
+	deck_tracker = (*deck)->next;
+
+	while (deck_tracker)
+	{
+		temp = deck_tracker->next;
+		current_node = deck_tracker;
+		deck_back_tracker = deck_tracker->prev;
+		while (deck_back_tracker && compare(current_node, deck_back_tracker) < 0)
+		{
+			swap_nodes(deck, deck_back_tracker, current_node);
+			deck_back_tracker = current_node->prev;
+		}
+		deck_tracker = temp;
+	}
+}
+
 /**
  * get_card_value - get the value of a card based on its kind and value
  *
@@ -77,34 +113,4 @@ void swap_nodes(deck_node_t **head, deck_node_t *node_one,
 		temp->next = node_two;
 	else
 		*head = node_two;
-}
-
-/**
- * sort_deck - sort a deck of cards
- * Used insertion sort algorithm
- *
- * @deck: head of the doubly linked list of cards to sort
- * Return: nothing
- */
-void sort_deck(deck_node_t **deck)
-{
-	deck_node_t *deck_tracker, *deck_back_tracker, *current_node, *temp;
-
-	if (!(*deck))
-		return;
-
-	deck_tracker = (*deck)->next;
-
-	while (deck_tracker)
-	{
-		temp = deck_tracker->next;
-		current_node = deck_tracker;
-		deck_back_tracker = deck_tracker->prev;
-		while (deck_back_tracker && compare(current_node, deck_back_tracker) < 0)
-		{
-			swap_nodes(deck, deck_back_tracker, current_node);
-			deck_back_tracker = current_node->prev;
-		}
-		deck_tracker = temp;
-	}
 }
